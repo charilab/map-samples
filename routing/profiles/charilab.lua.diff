@@ -1,0 +1,45 @@
+--- bicycle.lua	2017-01-08 13:05:00.515134389 +0900
++++ charilab.lua	2017-01-08 13:22:19.914723388 +0900
+@@ -16,30 +16,33 @@ restrictions = { "bicycle" }
+ unsafe_highway_list = { ["primary"] = true, ["secondary"] = true, ["tertiary"] = true, ["primary_link"] = true, ["secondary_link"] = true, ["tertiary_link"] = true}
+ 
+ local default_speed = 15
++local slowdown_speed = 10
+ local walking_speed = 6
+ 
+ bicycle_speeds = {
+   ["cycleway"] = default_speed,
++  ["trunk"] = default_speed,
++  ["trunk_link"] = default_speed,
+   ["primary"] = default_speed,
+   ["primary_link"] = default_speed,
+   ["secondary"] = default_speed,
+   ["secondary_link"] = default_speed,
+   ["tertiary"] = default_speed,
+   ["tertiary_link"] = default_speed,
+-  ["residential"] = default_speed,
+-  ["unclassified"] = default_speed,
+-  ["living_street"] = default_speed,
+-  ["road"] = default_speed,
+-  ["service"] = default_speed,
+-  ["track"] = 12,
+-  ["path"] = 12
++  --["residential"] = default_speed,
++  ["unclassified"] = slowdown_speed,
++  --["living_street"] = default_speed,
++  --["road"] = default_speed,
++  --["track"] = 12,
++  --["path"] = 12
+   --["footway"] = 12,
+   --["pedestrian"] = 12,
+ }
+ 
+ pedestrian_speeds = {
+-  ["footway"] = walking_speed,
+-  ["pedestrian"] = walking_speed,
++  ["service"] = walking_speed,
++  --["footway"] = walking_speed,
++  --["pedestrian"] = walking_speed,
+   ["steps"] = 2
+ }
+ 
